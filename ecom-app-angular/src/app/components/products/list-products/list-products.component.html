@@ -1,0 +1,24 @@
+<table class="table table-striped">
+  <thead>
+  <tr>
+    <th scope="col">ID</th>
+    <th scope="col">Name</th>
+    <th scope="col">Price</th>
+    <th scope="col">Quantity</th>
+    <th scope="col">Action</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let product of products">
+    <td>{{product.id}}</td>
+    <td>{{product.name}}</td>
+    <td>{{product.price}}</td>
+    <td>{{product.quantity}}</td>
+    <td>
+      <button class="btn btn-primary ms-2" (click)="handleEdit(product.id)">Edit</button>
+      <button class="btn btn-danger ms-2" (click)="deleteProduct(product.id)">Delete</button>
+    </td>
+  </tr>
+
+  </tbody>
+</table>

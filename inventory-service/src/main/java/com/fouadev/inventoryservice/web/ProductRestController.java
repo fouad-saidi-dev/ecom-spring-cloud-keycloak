@@ -11,7 +11,7 @@ import com.fouadev.inventoryservice.repositories.ProductRepository;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-@CrossOrigin("*")
+//@CrossOrigin("*")
 @RestController
 @RequestMapping("/api/products")
 public class ProductRestController {

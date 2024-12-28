@@ -1,4 +1,4 @@
-package com.fouadev.inventoryservice.security;
+package com.fouadev.orderservice.security;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -11,7 +11,6 @@ import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.web.cors.CorsConfiguration;
 import org.springframework.web.cors.CorsConfigurationSource;
 import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
-
 
 import java.util.List;
 
@@ -31,7 +30,7 @@ public class ConfigSecurity {
                 .cors(Customizer.withDefaults())
                 .csrf(AbstractHttpConfigurer::disable)
                 .headers(headers -> headers.frameOptions(HeadersConfigurer.FrameOptionsConfig::disable))
-                .authorizeHttpRequests(r->r.requestMatchers("/h2-console/**","/api/products/**").permitAll())
+                .authorizeHttpRequests(r->r.requestMatchers("/h2-console/**","/api/orders/**").permitAll())
 //                .authorizeHttpRequests(r->r.requestMatchers("/api/products/**").hasAuthority("ADMIN"))
                 .authorizeHttpRequests(r->r.anyRequest().authenticated())
                 .oauth2ResourceServer(r->r.jwt(jt->jt.jwtAuthenticationConverter(jwtAuthConverter)))

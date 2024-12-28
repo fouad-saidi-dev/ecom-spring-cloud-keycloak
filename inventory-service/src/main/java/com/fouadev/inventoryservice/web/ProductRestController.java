@@ -8,6 +8,7 @@ package com.fouadev.inventoryservice.web;
 
 import com.fouadev.inventoryservice.entities.Product;
 import com.fouadev.inventoryservice.repositories.ProductRepository;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -27,6 +28,7 @@ public class ProductRestController {
     }
 
     @GetMapping(path = "/{id}")
+    //@PreAuthorize("hasAuthority('ADMIN')")
     public Product getProduct(@PathVariable String id) {
         return productRepository.findById(id).orElseThrow(() -> new RuntimeException("Product not found"));
     }

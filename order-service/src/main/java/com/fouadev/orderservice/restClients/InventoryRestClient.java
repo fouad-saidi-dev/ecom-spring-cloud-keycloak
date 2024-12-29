@@ -3,6 +3,7 @@ package com.fouadev.orderservice.restClients;
 import com.fouadev.orderservice.model.Product;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 
 import java.util.List;
 
@@ -10,4 +11,6 @@ import java.util.List;
 public interface InventoryRestClient {
     @GetMapping("/api/products")
     List<Product> getProducts();
+    @GetMapping("/api/products/{productId}")
+    Product getProduct(@PathVariable String productId);
 }

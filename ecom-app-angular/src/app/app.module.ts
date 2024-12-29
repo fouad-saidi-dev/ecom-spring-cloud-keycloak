@@ -7,6 +7,7 @@ import { AppBarComponent } from './components/app-bar/app-bar.component';
 import { ListProductsComponent } from './components/products/list-products/list-products.component';
 import {HttpClientModule} from "@angular/common/http";
 import {KeycloakAngularModule, KeycloakService} from "keycloak-angular";
+import { ListOrdersComponent } from './components/orders/list-orders/list-orders.component';
 
 // export function initializeKeycloak(keycloak: KeycloakService) {
 //   return () =>
@@ -43,7 +44,8 @@ function initializeKeycloak(keycloak: KeycloakService) {
   declarations: [
     AppComponent,
     AppBarComponent,
-    ListProductsComponent
+    ListProductsComponent,
+    ListOrdersComponent
   ],
   imports: [
     BrowserModule,

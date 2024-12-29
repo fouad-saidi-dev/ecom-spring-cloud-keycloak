@@ -34,7 +34,7 @@ public class OrderServiceApplication {
 
             List<Product> products = inventoryRestClient.getProducts();
 
-            for (int i = 0; i < 10; i++) {
+            for (int i = 0; i < 5; i++) {
                 Order order = Order.builder()
                         .id(UUID.randomUUID().toString())
                         .date(LocalDateTime.now())

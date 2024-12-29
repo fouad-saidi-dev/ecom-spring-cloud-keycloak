@@ -31,7 +31,7 @@ public class ConfigSecurity {
                 .cors(Customizer.withDefaults())
                 .csrf(AbstractHttpConfigurer::disable)
                 .headers(headers -> headers.frameOptions(HeadersConfigurer.FrameOptionsConfig::disable))
-                .authorizeHttpRequests(r->r.requestMatchers("/h2-console/**","/api/products/**").permitAll())
+                .authorizeHttpRequests(r->r.requestMatchers("/h2-console/**").permitAll())
 //                .authorizeHttpRequests(r->r.requestMatchers("/api/products/**").hasAuthority("ADMIN"))
                 .authorizeHttpRequests(r->r.anyRequest().authenticated())
                 .oauth2ResourceServer(r->r.jwt(jt->jt.jwtAuthenticationConverter(jwtAuthConverter)))

@@ -1,5 +1,6 @@
 package com.fouadev.orderservice.entities;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fouadev.orderservice.enums.OrderState;
 import jakarta.persistence.*;
 import lombok.*;

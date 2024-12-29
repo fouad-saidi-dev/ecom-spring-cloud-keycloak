@@ -1,5 +1,7 @@
 package com.fouadev.orderservice.entities;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fouadev.orderservice.model.Product;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -18,6 +20,9 @@ public class ProductItem {
     private int quantity;
     private double price;
     @ManyToOne
+    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
     private Order order;
+    @Transient
+    private Product product;
 
 }

@@ -1,0 +1,46 @@
+<div class="container">
+  <div class="card">
+    <div class="card-header">
+      <h3>Order Details</h3>
+    </div>
+    <div class="card-body">
+      <div class="row">
+        <div class="col">
+          <label>Order Id</label>
+          <p>
+            <span class="badge bg-primary">{{order.id}}</span>
+          </p>
+        </div>
+        <div class="col">
+          <label>Date</label>
+          <p>
+            <span class="badge bg-primary">{{order.date}}</span>
+          </p>
+        </div>
+        <div class="col">
+          <label>State</label>
+          <p>
+           <span class="badge bg-danger">{{order.state}}</span>
+          </p>
+        </div>
+      </div>
+      <table class="table table-hover">
+        <thead>
+        <tr>
+          <th>Product Name</th>
+          <th>Quantity</th>
+          <th>Price</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let orderItem of orderItems">
+          <td>{{orderItem.product.name}}</td>
+          <td>{{orderItem.quantity}}</td>
+          <td>{{orderItem.price}}</td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+

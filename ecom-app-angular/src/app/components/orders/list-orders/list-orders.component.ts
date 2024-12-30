@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {OrderService} from "../../../services/order.service";
 import {Order} from "../../../modules/order.module";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-list-orders',
@@ -9,7 +10,7 @@ import {Order} from "../../../modules/order.module";
 })
 export class ListOrdersComponent implements OnInit{
   public orders : Array<Order> = []
-  constructor(private orderService:OrderService) {
+  constructor(private orderService:OrderService,private route:Router) {
   }
   ngOnInit(): void {
   this.getOrders()
@@ -33,5 +34,9 @@ export class ListOrdersComponent implements OnInit{
 
   handleDelete(id: String) {
 
+  }
+
+  handleView(id: String) {
+    this.route.navigateByUrl(`/order-details/${id}`);
   }
 }

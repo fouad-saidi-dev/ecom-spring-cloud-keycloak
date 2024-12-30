@@ -1,10 +1,5 @@
 package com.fouadev.orderservice.security;
-/*
- Created by : Fouad SAIDI on 26/12/2024
- @author : Fouad SAIDI
- @date : 26/12/2024
- @project : ecom-spring-cloud-security
-*/
+
 
 import org.springframework.core.convert.converter.Converter;
 import org.springframework.security.authentication.AbstractAuthenticationToken;

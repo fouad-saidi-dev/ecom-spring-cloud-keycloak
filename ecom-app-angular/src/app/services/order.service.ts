@@ -7,10 +7,14 @@ import {Order} from "../modules/order.module";
   providedIn: 'root'
 })
 export class OrderService {
-
+  baseUrl:string="http://localhost:8082/api/orders";
   constructor(private http: HttpClient) { }
 
   public getOrders():Observable<Array<Order>> {
-    return this.http.get<Array<Order>>("http://localhost:8082/api/orders");
+    return this.http.get<Array<Order>>(`${this.baseUrl}`);
+  }
+
+  public getOrder(id:string):Observable<Order> {
+    return this.http.get<Order>(`${this.baseUrl}/${id}`);
   }
 }

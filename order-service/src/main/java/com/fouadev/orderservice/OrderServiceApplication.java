@@ -32,8 +32,9 @@ public class OrderServiceApplication {
                              InventoryRestClient inventoryRestClient) {
         return args -> {
 
-            List<Product> products = inventoryRestClient.getProducts();
-
+            //List<Product> products = inventoryRestClient.getProducts();
+            List<String> productIds = List.of("P01","P02","P03");
+            System.out.println("size products =====>> "+productIds.size());
             for (int i = 0; i < 5; i++) {
                 Order order = Order.builder()
                         .id(UUID.randomUUID().toString())
@@ -43,12 +44,12 @@ public class OrderServiceApplication {
 
                 Order savedOrder = orderRepository.save(order);
 
-                products.forEach(p->{
+                productIds.forEach(p->{
 
                     ProductItem productItem = ProductItem.builder()
-                            .price(p.getPrice())
+                            .price(Math.random()*6000+100)
                             .quantity(new Random().nextInt(20))
-                            .productId(p.getId())
+                            .productId(p)
                             .order(savedOrder)
                             .build();
 

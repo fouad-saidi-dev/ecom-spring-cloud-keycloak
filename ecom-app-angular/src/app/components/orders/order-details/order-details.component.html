@@ -6,22 +6,30 @@
     <div class="card-body">
       <div class="row">
         <div class="col">
-          <label>Order Id</label>
-          <p>
-            <span class="badge bg-primary">{{order.id}}</span>
-          </p>
+          <div class="card">
+            <div class="card-header">Order Id</div>
+            <div class="card-body">
+              <span class="badge bg-primary">{{order.id}}</span>
+            </div>
+          </div>
+
         </div>
         <div class="col">
-          <label>Date</label>
-          <p>
-            <span class="badge bg-primary">{{order.date}}</span>
-          </p>
+          <div class="card">
+            <div class="card-header">Date</div>
+            <div class="card-body">
+              <span class="badge bg-success">{{order.date}}</span>
+            </div>
+          </div>
+
         </div>
         <div class="col">
-          <label>State</label>
-          <p>
-           <span class="badge bg-danger">{{order.state}}</span>
-          </p>
+          <div class="card">
+            <div class="card-header">State</div>
+            <div class="card-body">
+              <span class="badge bg-danger">{{order.state}}</span>
+            </div>
+          </div>
         </div>
       </div>
       <table class="table table-hover">

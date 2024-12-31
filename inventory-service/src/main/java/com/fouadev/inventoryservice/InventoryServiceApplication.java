@@ -21,7 +21,7 @@ public class InventoryServiceApplication {
         return args -> {
             productRepository.save(
                     Product.builder()
-                            .id(UUID.randomUUID().toString())
+                            .id("P01")
                             .name("Keyboard")
                             .price(100.0)
                             .quantity(10)
@@ -30,7 +30,7 @@ public class InventoryServiceApplication {
 
             productRepository.save(
                     Product.builder()
-                            .id(UUID.randomUUID().toString())
+                            .id("P02")
                             .name("Laptop")
                             .price(1000.0)
                             .quantity(10)
@@ -39,7 +39,7 @@ public class InventoryServiceApplication {
 
             productRepository.save(
                     Product.builder()
-                            .id(UUID.randomUUID().toString())
+                            .id("P03")
                             .name("Mouse")
                             .price(50.0)
                             .quantity(10)
